@@ -1,8 +1,7 @@
 <?php
 session_start();
 date_default_timezone_set("Asia/Bangkok"); 
-$input = json_decode(file_get_contents('php://input'));
-$event_type = $input->events[0]->type;    
+ini_set("display_errors",1);  
 
 function replyMsg($arrayPostData){     
 
@@ -30,33 +29,24 @@ function replyMsg($arrayPostData){
     $err = curl_error($curl);
     curl_close($curl);
 }
-// echo "OK Test";
-// print_r($event_type);
+
+$input = json_decode(file_get_contents('php://input'));
+$event_type = $input->events[0]->type;        
+
 if($event_type == "message"){
 
     $replyToken = isset($input->events[0]->replyToken) ? $input->events[0]->replyToken : null;
-    $message_type = isset($input->events[0]->message->type) ? $input->events[0]->message->type : null;
-    $message_text = isset($input->events[0]->message->text) ? $input->events[0]->message->text : null;
+    // $message_type = isset($input->events[0]->message->type) ? $input->events[0]->message->type : null;
+    // $message_text = isset($input->events[0]->message->text) ? $input->events[0]->message->text : null;
+    
+    // $message_reply = json_encode($input);
+    $message_reply = 'Hollo world';
+    $arrayPostData =[];
+    $arrayPostData['replyToken'] = $replyToken;
+    $arrayPostData['messages'][0]['type']  = "text";
+    $arrayPostData['messages'][0]['text'] = $message_reply;
 
-    // if($message_type == "text") {
-
-    //     if($message_text == "ออฟ") {
-             
-            $message = "Hollo world";   
-            $arrayPostData =[];
-            $arrayPostData['replyToken'] = $replyToken;
-            $arrayPostData['messages'][0]['type']  = "text";
-            $arrayPostData['messages'][0]['text'] = $message;
-            replyMsg($arrayPostData);
-//         }
-//         else if($message_text == "วันนี้") {
-
- 
-//         }
-    // }
-//     else{
-
-//     }
+    replyMsg($arrayPostData);
 }
 
 
