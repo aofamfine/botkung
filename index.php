@@ -32,7 +32,7 @@ function replyMsg($arrayPostData){
 }
  
 
-if($event_type == "message"){
+// if($event_type == "message"){
 
     $replyToken = isset($input->events[0]->replyToken) ? $input->events[0]->replyToken : null;
     $message_type = isset($input->events[0]->message->type) ? $input->events[0]->message->type : null;
@@ -57,7 +57,7 @@ if($event_type == "message"){
     // else{
 
     // }
-}
+// }
 
 
 
