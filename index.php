@@ -47,7 +47,7 @@ if($event_type == "message"){
             $arrayPostData['replyToken'] = $replyToken;
             $arrayPostData['messages'][0]['type']  = "text";
             $arrayPostData['messages'][0]['text'] = $message;
-        
+            replyMsg($arrayPostData);
     //     }
     //     else if($message_text == "วันนี้") {
 
