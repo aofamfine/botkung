@@ -45,7 +45,7 @@ if($event_type == "message"){
 
         if($message_text == "อ๊อฟ") {
              
-            $message = "";   
+            $message = "Hollo world";   
             $arrayPostData =[];
             $arrayPostData['replyToken'] = $replyToken;
             $arrayPostData['messages'][0]['type']  = "text";
