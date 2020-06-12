@@ -38,7 +38,7 @@ if($event_type == "message"){
     $message_type = isset($input->events[0]->message->type) ? $input->events[0]->message->type : null;
     $message_text = isset($input->events[0]->message->text) ? $input->events[0]->message->text : null;
 
-    if($message_type == "text") {
+    // if($message_type == "text") {
 
     //     if($message_text == "ออฟ") {
              
@@ -53,7 +53,7 @@ if($event_type == "message"){
 
  
 //         }
-    }
+    // }
 //     else{
 
 //     }
