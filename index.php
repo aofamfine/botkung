@@ -6,7 +6,7 @@ $event_type = $input->events[0]->type;
 
 function replyMsg($arrayPostData){     
 
-    $access_token ="lLz10H2m/1R/E1syDjcRbMxDQhnRmo6/X9H5j8DUP7ZfEnw1rd6U5yr4Ab5v9hx4pryKzi+wBf7bjjINpWW3cAJdtNbU5KfJtPikWHTClVwdY/VgkXMmlBIuo6jWWT18lAoLufz8CwUT2PD8Qpx7EQdB04t89/1O/w1cDnyilFU=";
+    $access_token ="qd7DzGzDJYSZUh3pxo53LdMgfFpR+Za3HroBRcktSBgycysbECLYbQ0T9zXT2S7CWYcqiNNKWKxR7LWh1H11Qzl2/fvJZwPYlgVTYDxaDAD9BEe0o/81VJFhKh+Z1irwlZHouBQBh/R9K1HsTQ9RVgdB04t89/1O/w1cDnyilFU=";
     $reply_url = "https://api.line.me/v2/bot/message/reply";
 
     $curl = curl_init();
@@ -30,15 +30,15 @@ function replyMsg($arrayPostData){
     $err = curl_error($curl);
     curl_close($curl);
 }
-echo "OK Test";
-print_r($event_type);
-// if($event_type == "message"){
+// echo "OK Test";
+// print_r($event_type);
+if($event_type == "message"){
 
     $replyToken = isset($input->events[0]->replyToken) ? $input->events[0]->replyToken : null;
     $message_type = isset($input->events[0]->message->type) ? $input->events[0]->message->type : null;
     $message_text = isset($input->events[0]->message->text) ? $input->events[0]->message->text : null;
 
-    // if($message_type == "text") {
+    if($message_type == "text") {
 
     //     if($message_text == "ออฟ") {
              
@@ -48,16 +48,16 @@ print_r($event_type);
             $arrayPostData['messages'][0]['type']  = "text";
             $arrayPostData['messages'][0]['text'] = $message;
             replyMsg($arrayPostData);
-    //     }
-    //     else if($message_text == "วันนี้") {
+//         }
+//         else if($message_text == "วันนี้") {
 
  
-    //     }
-    // }
-    // else{
+//         }
+    }
+//     else{
 
-    // }
-// }
+//     }
+}
 
 
 
