@@ -41,9 +41,9 @@ if($event_type == "message"){
     $message_type = isset($input->events[0]->message->type) ? $input->events[0]->message->type : null;
     $message_text = isset($input->events[0]->message->text) ? $input->events[0]->message->text : null;
 
-    if($message_type == "text") {
+    // if($message_type == "text") {
 
-        if($message_text == "อ๊อฟ") {
+    //     if($message_text == "ออฟ") {
              
             $message = "Hollo world";   
             $arrayPostData =[];
@@ -51,15 +51,15 @@ if($event_type == "message"){
             $arrayPostData['messages'][0]['type']  = "text";
             $arrayPostData['messages'][0]['text'] = $message;
         
-        }
-        else if($message_text == "วันนี้") {
+    //     }
+    //     else if($message_text == "วันนี้") {
 
  
-        }
-    }
-    else{
+    //     }
+    // }
+    // else{
 
-    }
+    // }
 }
 
 
