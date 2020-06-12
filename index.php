@@ -30,7 +30,7 @@ function replyMsg($arrayPostData){
     $err = curl_error($curl);
     curl_close($curl);
 }
- 
+echo "OK Test";
 
 // if($event_type == "message"){
 
