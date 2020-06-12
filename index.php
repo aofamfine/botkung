@@ -31,7 +31,7 @@ function replyMsg($arrayPostData){
     curl_close($curl);
 }
 echo "OK Test";
-
+print_r($event_type);
 // if($event_type == "message"){
 
     $replyToken = isset($input->events[0]->replyToken) ? $input->events[0]->replyToken : null;
