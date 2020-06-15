@@ -36,18 +36,42 @@ $event_type = $input->events[0]->type;
 if($event_type == "message"){
 
     $replyToken = isset($input->events[0]->replyToken) ? $input->events[0]->replyToken : null;
-    // $message_type = isset($input->events[0]->message->type) ? $input->events[0]->message->type : null;
-    // $message_text = isset($input->events[0]->message->text) ? $input->events[0]->message->text : null;
-    
+    $message_type = isset($input->events[0]->message->type) ? $input->events[0]->message->type : null;
+    $message_text = isset($input->events[0]->message->text) ? $input->events[0]->message->text : null;    
     // $message_reply = json_encode($input);
-    $message_reply = 'Hollo world';
-    $arrayPostData =[];
-    $arrayPostData['replyToken'] = $replyToken;
-    $arrayPostData['messages'][0]['type']  = "text";
-    $arrayPostData['messages'][0]['text'] = $message_reply;
 
-    replyMsg($arrayPostData);
-}
+    if($message_type == "text") {
+                    
+        if($message_text == "กิจกรรม") {
+            
+            // $message = "";
+          
+             // $message_reply = 'Hollo world';
+            // $arrayPostData =[];
+            // $arrayPostData['replyToken'] = $replyToken;
+            // $arrayPostData['messages'][0]['type']  = "text";
+            // $arrayPostData['messages'][0]['text'] = $message_reply;
+
+            // replyMsg($arrayPostData);  
+        }
+        else if($message_text == "rom"){
+
+
+
+        }
+        else if($message_text == "bot" || $message_text == "botkung"){
+
+            $message_reply = 'ค้าบบ';
+            $arrayPostData =[];
+            $arrayPostData['replyToken'] = $replyToken;
+            $arrayPostData['messages'][0]['type']  = "text";
+            $arrayPostData['messages'][0]['text'] = $message_reply;
+            replyMsg($arrayPostData);  
+        }
+    }
+} //END message
+
+
 
 
 
