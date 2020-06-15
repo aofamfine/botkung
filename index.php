@@ -51,7 +51,7 @@ if($event_type == "message"){
             replyMsg($arrayPostData);  
 
         }
-        else if($message_text == "bot" || $message_text == "โหลๆ" || $message_text == "น้องบอท" || $message_text == "น้องคุง"){
+        else if($message_text == "bot" || $message_text == "โหลๆ" || $message_text == "น้องบอท" || $message_text == "น้องคุง"|| $message_text == "บอท"){
 
             $message_reply = 'ค้าบบ';
             $arrayPostData =[];
