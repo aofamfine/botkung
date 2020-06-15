@@ -61,22 +61,32 @@ if($event_type == "message"){
             replyMsg($arrayPostData);  
         }       
         else{
+
+            $date = date('Y-m-d');
+            $dateday =  date('w', strtotime($date ));
+
+            $message_reply = $dateday;
+            $arrayPostData =[];
+            $arrayPostData['replyToken'] = $replyToken;
+            $arrayPostData['messages'][0]['type']  = "text";
+            $arrayPostData['messages'][0]['text'] = $message_reply;
+            replyMsg($arrayPostData);  
+            
             // $url1 = '';
             // $curl = curl_init();
             // curl_setopt($curl, CURLOPT_URL,$url1);
             // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST,false);
             // curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
           
-            // $result= curl_exec($curl);
-            // <img src="http://images.websnapr.com/?size=s&url=www.mywebsite.com">
+            // $result= curl_exec($curl);           
 
-            $imgurl = 'https://lh3.googleusercontent.com/a-/AOh14Gh8h_2fdZGnfeGum4YzNQDa1m-EMb165lxNy7GS9A=s96-c';
-            $arrayPostData =[];
-            $arrayPostData['replyToken'] = $replyToken;
-            $arrayPostData['messages'][0]['type']  = "image";
-            $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl;
-            $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl;
-            replyMsg($arrayPostData);  
+            // $imgurl = 'https://lh3.googleusercontent.com/a-/AOh14Gh8h_2fdZGnfeGum4YzNQDa1m-EMb165lxNy7GS9A=s96-c';
+            // $arrayPostData =[];
+            // $arrayPostData['replyToken'] = $replyToken;
+            // $arrayPostData['messages'][0]['type']  = "image";
+            // $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl;
+            // $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl;
+            // replyMsg($arrayPostData);  
 
 
         } 
