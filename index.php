@@ -65,29 +65,42 @@ if($event_type == "message"){
             $date = date('Y-m-d');
             $dateday =  date('w', strtotime($date ));
 
-            $message_reply = $dateday;
-            $arrayPostData =[];
-            $arrayPostData['replyToken'] = $replyToken;
-            $arrayPostData['messages'][0]['type']  = "text";
-            $arrayPostData['messages'][0]['text'] = $message_reply;
-            replyMsg($arrayPostData);  
+            if($dateday == 1){
+
+              if(date('H') >= 10){
+
+              }
+              else{
+                $message_reply = "เดี๋ยวรอข้อมูลก่อนนะค้าบบ";
+                $arrayPostData =[];
+                $arrayPostData['replyToken'] = $replyToken;
+                $arrayPostData['messages'][0]['type']  = "text";
+                $arrayPostData['messages'][0]['text'] = $message_reply;
+                replyMsg($arrayPostData); 
+              }
+            }
+            else{
+
+                $imgurl1 = 'imgdata/one_hundred_class_MVP.jpg';
+                $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
+                $imgurl2 = 'imgdata/Dungeon.jpg';
+                $arrayPostData =[];
+                $arrayPostData['replyToken'] = $replyToken;
+                $arrayPostData['messages'][0]['type']  = "image";
+
+                for($i = 1; $i <= 3; $i++){
+
+                  $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl.$i;
+                  $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl.$i;
+                  replyMsg($arrayPostData); 
+
+                }
             
-            // $url1 = '';
-            // $curl = curl_init();
-            // curl_setopt($curl, CURLOPT_URL,$url1);
-            // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST,false);
-            // curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
-          
-            // $result= curl_exec($curl);           
+            }
 
-            // $imgurl = 'https://lh3.googleusercontent.com/a-/AOh14Gh8h_2fdZGnfeGum4YzNQDa1m-EMb165lxNy7GS9A=s96-c';
-            // $arrayPostData =[];
-            // $arrayPostData['replyToken'] = $replyToken;
-            // $arrayPostData['messages'][0]['type']  = "image";
-            // $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl;
-            // $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl;
-            // replyMsg($arrayPostData);  
+        
 
+            
 
         } 
     }
