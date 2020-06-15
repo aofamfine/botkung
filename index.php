@@ -68,9 +68,9 @@ if($event_type == "message"){
             if($dateday == 1){
 
                   if(date('H') >= 10){
-                    $imgurl1 = 'imgdata/one_hundred_class_MVP.jpg';
+                    $imgurl1 = './imgdata/one_hundred_class_MVP.JPG';
                     // $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
-                    $imgurl2 = 'imgdata/Dungeon.jpg';
+                    $imgurl2 = './imgdata/Dungeon.JPG';
                     $arrayPostData =[];
                     $arrayPostData['replyToken'] = $replyToken;
                     $arrayPostData['messages'][0]['type']  = "image";
@@ -94,9 +94,9 @@ if($event_type == "message"){
             }
             else{
 
-                  $imgurl1 = 'imgdata/one_hundred_class_MVP.jpg';
+                  $imgurl1 = './imgdata/one_hundred_class_MVP.JPG';
                   // $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
-                  $imgurl2 = 'imgdata/Dungeon.jpg';
+                  $imgurl2 = './imgdata/Dungeon.JPG';
                   $arrayPostData =[];
                   $arrayPostData['replyToken'] = $replyToken;
                   $arrayPostData['messages'][0]['type']  = "image";
