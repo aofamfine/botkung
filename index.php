@@ -68,6 +68,20 @@ if($event_type == "message"){
             if($dateday == 1){
 
                   if(date('H') >= 10){
+                    $imgurl1 = 'imgdata/one_hundred_class_MVP.jpg';
+                    // $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
+                    $imgurl2 = 'imgdata/Dungeon.jpg';
+                    $arrayPostData =[];
+                    $arrayPostData['replyToken'] = $replyToken;
+                    $arrayPostData['messages'][0]['type']  = "image";
+  
+                    for($i = 1; $i <= 2; $i++){
+  
+                      $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl.$i;
+                      $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl.$i;
+                      replyMsg($arrayPostData); 
+  
+                    }  
                   }
                   else{
                     $message_reply = "เดี๋ยวรอข้อมูลก่อนนะค้าบบ";
