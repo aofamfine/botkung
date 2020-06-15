@@ -73,7 +73,8 @@ if($event_type == "message"){
             $imgurl = 'https://lh3.googleusercontent.com/a-/AOh14Gh8h_2fdZGnfeGum4YzNQDa1m-EMb165lxNy7GS9A=s96-c';
             $arrayPostData =[];
             $arrayPostData['replyToken'] = $replyToken;
-            $arrayPostData['messages'][0]['originalContentUrl']  = "image";
+            $arrayPostData['messages'][0]['type']  = "image";
+            $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl;
             $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl;
             replyMsg($arrayPostData);  
 
