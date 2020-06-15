@@ -51,7 +51,7 @@ if($event_type == "message"){
             replyMsg($arrayPostData);  
 
         }
-        else if($message_text == "bot" || $message_text == "โหลๆ"){
+        else if($message_text == "bot" || $message_text == "โหลๆ" || $message_text == "น้องบอท" || $message_text == "น้องคุง"){
 
             $message_reply = 'ค้าบบ';
             $arrayPostData =[];
@@ -81,13 +81,13 @@ if($event_type == "message"){
             else{
 
                   $imgurl1 = 'imgdata/one_hundred_class_MVP.jpg';
-                  $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
+                  // $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
                   $imgurl2 = 'imgdata/Dungeon.jpg';
                   $arrayPostData =[];
                   $arrayPostData['replyToken'] = $replyToken;
                   $arrayPostData['messages'][0]['type']  = "image";
 
-                  for($i = 1; $i <= 3; $i++){
+                  for($i = 1; $i <= 2; $i++){
 
                     $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl.$i;
                     $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl.$i;
@@ -101,8 +101,5 @@ if($event_type == "message"){
 
 
 } //END message
-
-
-
 
 ?>
