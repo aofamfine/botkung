@@ -68,6 +68,15 @@ if($event_type == "message"){
             // curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
           
             // $result= curl_exec($curl);
+            // <img src="http://images.websnapr.com/?size=s&url=www.mywebsite.com">
+
+            $imgurl = 'https://lh3.googleusercontent.com/a-/AOh14Gh8h_2fdZGnfeGum4YzNQDa1m-EMb165lxNy7GS9A=s96-c';
+            $arrayPostData =[];
+            $arrayPostData['replyToken'] = $replyToken;
+            $arrayPostData['messages'][0]['originalContentUrl']  = "image";
+            $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl;
+            replyMsg($arrayPostData);  
+
 
         } 
     }
