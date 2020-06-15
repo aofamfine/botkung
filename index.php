@@ -41,7 +41,7 @@ if($event_type == "message"){
   
     if($message_type == "text") {
                     
-        if($message_text == "botkung"){
+        if($message_text == "botkung" || $message_text == "Botkung"){
 
             $message_reply = 'ค้าบบผม {-0_0-}';
             $arrayPostData =[];
