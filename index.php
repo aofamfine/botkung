@@ -43,7 +43,7 @@ if($event_type == "message"){
                     
         if($message_text == "botkung"){
 
-            $message_reply = 'ค้าบบผม';
+            $message_reply = 'ค้าบบผม {-0_0-}';
             $arrayPostData =[];
             $arrayPostData['replyToken'] = $replyToken;
             $arrayPostData['messages'][0]['type']  = "text";
@@ -59,8 +59,20 @@ if($event_type == "message"){
             $arrayPostData['messages'][0]['type']  = "text";
             $arrayPostData['messages'][0]['text'] = $message_reply;
             replyMsg($arrayPostData);  
-        }        
+        }       
+        else{
+            // $url1 = '';
+            // $curl = curl_init();
+            // curl_setopt($curl, CURLOPT_URL,$url1);
+            // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST,false);
+            // curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
+          
+            // $result= curl_exec($curl);
+
+        } 
     }
+
+
 } //END message
 
 
