@@ -60,47 +60,41 @@ if($event_type == "message"){
             $arrayPostData['messages'][0]['text'] = $message_reply;
             replyMsg($arrayPostData);  
         }       
-        else{
+        else if($message_text == "100" || $message_text == "100ชั้น" || $message_text == "ดันกิล" || $message_text == "โอลาเคิล" || $message_text == "oracle"){
 
             $date = date('Y-m-d');
             $dateday =  date('w', strtotime($date ));
 
             if($dateday == 1){
 
-              if(date('H') >= 10){
-
-              }
-              else{
-                $message_reply = "เดี๋ยวรอข้อมูลก่อนนะค้าบบ";
-                $arrayPostData =[];
-                $arrayPostData['replyToken'] = $replyToken;
-                $arrayPostData['messages'][0]['type']  = "text";
-                $arrayPostData['messages'][0]['text'] = $message_reply;
-                replyMsg($arrayPostData); 
-              }
+                  if(date('H') >= 10){
+                  }
+                  else{
+                    $message_reply = "เดี๋ยวรอข้อมูลก่อนนะค้าบบ";
+                    $arrayPostData =[];
+                    $arrayPostData['replyToken'] = $replyToken;
+                    $arrayPostData['messages'][0]['type']  = "text";
+                    $arrayPostData['messages'][0]['text'] = $message_reply;
+                    replyMsg($arrayPostData); 
+                  }
             }
             else{
 
-                $imgurl1 = 'imgdata/one_hundred_class_MVP.jpg';
-                $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
-                $imgurl2 = 'imgdata/Dungeon.jpg';
-                $arrayPostData =[];
-                $arrayPostData['replyToken'] = $replyToken;
-                $arrayPostData['messages'][0]['type']  = "image";
+                  $imgurl1 = 'imgdata/one_hundred_class_MVP.jpg';
+                  $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
+                  $imgurl2 = 'imgdata/Dungeon.jpg';
+                  $arrayPostData =[];
+                  $arrayPostData['replyToken'] = $replyToken;
+                  $arrayPostData['messages'][0]['type']  = "image";
 
-                for($i = 1; $i <= 3; $i++){
+                  for($i = 1; $i <= 3; $i++){
 
-                  $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl.$i;
-                  $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl.$i;
-                  replyMsg($arrayPostData); 
+                    $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl.$i;
+                    $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl.$i;
+                    replyMsg($arrayPostData); 
 
-                }
-            
-            }
-
-        
-
-            
+                  }            
+            }           
 
         } 
     }
