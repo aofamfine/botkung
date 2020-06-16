@@ -96,7 +96,7 @@ if($event_type == "message"){
 
                   // $imgurl1 = 'https://github.com/aofamfine/botkung/blob/master/imgdata/one_hundred_class_MVP.JPG';
                   // $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
-                  $imgurl2 = 'https://github.com/aofamfine/botkung/blob/master/imgdata/Dungeon.JPG';
+                  $imgurl2 = './imgdata/Dungeon.JPG';
                   $arrayPostData =[];
                   $arrayPostData['replyToken'] = $replyToken;
                   $arrayPostData['messages'][0]['type']  = "image";
