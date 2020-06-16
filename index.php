@@ -95,26 +95,26 @@ if($event_type == "message"){
             else{
 
                   // $imgurl1 = 'https://github.com/aofamfine/botkung/blob/master/imgdata/one_hundred_class_MVP.JPG';
-                  // // $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
-                  // $imgurl2 = 'https://github.com/aofamfine/botkung/blob/master/imgdata/Dungeon.JPG';
-                  // $arrayPostData =[];
-                  // $arrayPostData['replyToken'] = $replyToken;
-                  // $arrayPostData['messages'][0]['type']  = "image";
+                  // $imgurl1 = 'imgdata/one_hundred_class_mini.jpg';
+                  $imgurl2 = 'https://github.com/aofamfine/botkung/blob/master/imgdata/Dungeon.JPG';
+                  $arrayPostData =[];
+                  $arrayPostData['replyToken'] = $replyToken;
+                  $arrayPostData['messages'][0]['type']  = "image";
 
                   // for($i = 1; $i <= 2; $i++){
 
-                  //   $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl.$i;
-                  //   $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl.$i;
-                  //   replyMsg($arrayPostData); 
+                    $arrayPostData['messages'][0]['originalContentUrl'] = $imgurl2;
+                    $arrayPostData['messages'][0]['previewImageUrl'] = $imgurl2;
+                    replyMsg($arrayPostData); 
 
                   // }       
-                  $i = 1;
-                  $message_reply = "เดี๋ยวรอข้อมูลก่อนนะค้าบบ";
-                  $arrayPostData =[];
-                  $arrayPostData['replyToken'] = $replyToken;
-                  $arrayPostData['messages'][0]['type']  = "text";
-                  $arrayPostData['messages'][0]['text'] = $message_reply.$i;
-                  replyMsg($arrayPostData); 
+                  // $i = 1;
+                  // $message_reply = "เดี๋ยวรอข้อมูลก่อนนะค้าบบ";
+                  // $arrayPostData =[];
+                  // $arrayPostData['replyToken'] = $replyToken;
+                  // $arrayPostData['messages'][0]['type']  = "text";
+                  // $arrayPostData['messages'][0]['text'] = $message_reply.$i;
+                  // replyMsg($arrayPostData); 
             }           
 
         } 
